@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nikhil Waghmode — Finance Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:     #0D1117;
+  --paper:   #F7F3EE;
+  --cream:   #EDE8E0;
+  --gold:    #B8860B;
+  --gold-lt: #D4A820;
+  --rust:    #8B3A2A;
+  --green:   #1A4731;
+  --muted:   #6B6560;
+  --border:  #D9D2C8;
+  --card:    #FDFAF6;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 52px;background:rgba(247,243,238,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.03em;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+
+#hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;padding:120px 52px 80px;gap:80px;position:relative;}
+.hero-vline{position:absolute;top:0;bottom:0;left:52%;width:1px;background:var(--border);opacity:.5;}
+.hero-text{animation:fadeUp .8s ease both;}
+.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:36px;height:1px;background:var(--gold);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(44px,5.5vw,72px);font-weight:900;line-height:1.03;letter-spacing:-.02em;margin-bottom:12px;}
+h1 em{font-style:italic;color:var(--gold);}
+.hero-role{font-size:15px;color:var(--muted);font-weight:300;margin-bottom:14px;}
+.hero-desc{font-size:15px;color:var(--muted);line-height:1.75;max-width:440px;margin-bottom:36px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;}
+.pill{font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border);background:var(--cream);color:var(--ink);font-weight:500;}
+.btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.btn-dark{background:var(--ink);color:var(--paper);}
+.btn-dark:hover{background:var(--gold);color:var(--ink);}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);}
+
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;animation:fadeUp .8s .18s ease both;opacity:0;animation-fill-mode:forwards;}
+.scard{background:var(--card);border:1px solid var(--border);padding:30px 26px;position:relative;overflow:hidden;transition:box-shadow .25s;}
+.scard:hover{box-shadow:0 12px 40px rgba(13,17,23,.08);}
+.scard::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .35s ease;}
+.scard:hover::before{height:100%;}
+.scard-num{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:6px;}
+.scard-num sup{font-size:16px;color:var(--gold);}
+.scard-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.scard-sub{font-size:12px;color:var(--muted);margin-top:3px;font-style:italic;}
+
+.divider{height:1px;background:var(--border);margin:0 52px;}
+section{padding:96px 52px;}
+.sec-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.sec-label::before{content:'';width:36px;height:1px;background:var(--gold);}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;line-height:1.15;margin-bottom:56px;}
+
+#about{background:var(--ink);color:var(--paper);}
+#about .sec-label{color:var(--gold-lt);}
+#about .sec-label::before{background:var(--gold-lt);}
+#about .sec-title{color:var(--paper);}
+.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:64px;align-items:start;}
+.about-body{font-size:15.5px;line-height:1.85;color:rgba(247,243,238,.8);}
+.about-body p+p{margin-top:18px;}
+.about-body strong{color:var(--gold-lt);font-weight:600;}
+.sidebar{display:flex;flex-direction:column;gap:16px;}
+.sbox{border:1px solid rgba(255,255,255,.1);padding:22px;background:rgba(255,255,255,.04);}
+.sbox h4{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--gold-lt);text-transform:uppercase;margin-bottom:10px;}
+.sbox p{font-size:13.5px;color:rgba(247,243,238,.65);line-height:1.6;}
+.sbox .big{font-family:'Playfair Display',serif;font-size:26px;color:var(--paper);font-weight:700;}
+
+#projects{background:var(--paper);}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.pcard{background:var(--card);border:1px solid var(--border);padding:34px 30px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 20px 56px rgba(13,17,23,.1);}
+.pcard.placeholder{background:repeating-linear-gradient(45deg,var(--cream),var(--cream) 4px,var(--card) 4px,var(--card) 20px);opacity:.65;}
+.pcard.placeholder:hover{transform:none;box-shadow:none;}
+.pbadge{position:absolute;top:16px;right:16px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;font-weight:700;color:#fff;}
+.pbadge.done{background:var(--green);}
+.pbadge.pub{background:#1c3f6e;}
+.pbadge.wip{background:var(--rust);}
+.pbadge.plan{background:var(--muted);}
+.pnum{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--gold);margin-bottom:18px;display:block;}
+.pcat{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:3px 9px;border:1px solid var(--border);display:inline-block;margin-bottom:10px;}
+.ptitle{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;line-height:1.25;margin-bottom:12px;color:var(--ink);}
+.pdesc{font-size:13px;color:var(--muted);line-height:1.72;margin-bottom:20px;}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px;}
+.ptag{font-size:10px;font-family:'DM Mono',monospace;padding:3px 8px;background:var(--cream);border:1px solid var(--border);color:var(--ink);}
+.plink{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid var(--gold);padding-bottom:1px;transition:gap .2s;}
+.plink:hover{gap:10px;}
+.plink-muted{font-size:11px;letter-spacing:.08em;color:var(--muted);font-style:italic;}
+
+#skills{background:var(--cream);}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;}
+.skill-group h3{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:22px;color:var(--ink);padding-bottom:10px;border-bottom:1px solid var(--border);}
+.skill-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.skill-name{font-size:13px;font-weight:500;color:var(--ink);}
+.bar{width:130px;height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
+.bar-fill{height:100%;background:var(--gold);border-radius:2px;width:0;transition:width 1.1s ease;}
+
+#experience{background:var(--paper);}
+.exp-list{display:flex;flex-direction:column;gap:2px;}
+.exp-card{background:var(--card);border:1px solid var(--border);padding:32px;display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;transition:box-shadow .2s;}
+.exp-card:hover{box-shadow:0 8px 32px rgba(13,17,23,.07);}
+.exp-period{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;}
+.exp-org{font-size:13px;font-weight:600;color:var(--ink);}
+.exp-type{font-size:11px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.08em;}
+.exp-content h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:10px;color:var(--ink);}
+.exp-content p{font-size:13.5px;color:var(--muted);line-height:1.72;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+
+#education{background:var(--cream);}
+.edu-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px;}
+.edu-card{background:var(--card);border:1px solid var(--border);padding:28px 30px;}
+.edu-year{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;}
+.edu-deg{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:4px;}
+.edu-inst{font-size:13px;color:var(--muted);}
+.edu-score{font-size:12px;font-family:'DM Mono',monospace;color:var(--green);margin-top:6px;}
+.certs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;}
+.cert-card{background:var(--card);border:1px solid var(--border);padding:24px;position:relative;}
+.cert-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);}
+.cert-org{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.cert-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.4;}
+.cert-status{font-size:11px;color:var(--gold);margin-top:6px;font-family:'DM Mono',monospace;}
+
+#contact{background:var(--ink);color:var(--paper);text-align:center;padding:96px 52px;}
+#contact .sec-label{justify-content:center;}
+#contact .sec-label::before{display:none;}
+#contact .sec-title{color:var(--paper);text-align:center;margin-bottom:14px;}
+#contact .sub{color:rgba(247,243,238,.6);margin-bottom:44px;font-size:15px;}
+.clinks{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.clink{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1px solid rgba(255,255,255,.18);color:var(--paper);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.05em;transition:all .2s;}
+.clink:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);text-align:center;padding:22px;font-size:11px;color:rgba(247,243,238,.25);font-family:'DM Mono',monospace;letter-spacing:.08em;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  nav{padding:16px 20px;}
+  .nav-links{display:none;}
+  #hero{grid-template-columns:1fr;padding:100px 20px 60px;}
+  .hero-vline{display:none;}
+  section{padding:64px 20px;}
+  .about-grid,.skills-grid,.projects-grid,.edu-row,.certs-row,.exp-card{grid-template-columns:1fr;}
+  .divider{margin:0 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#hero">NW <span>·</span> Finance</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-vline"></div>
+  <div class="hero-text">
+    <p class="eyebrow">Finance &amp; Valuation</p>
+    <h1>Nikhil<br/><em>Waghmode</em></h1>
+    <p class="hero-role">Investment Banking · Equity Research · Financial Modelling</p>
+    <p class="hero-desc">Analytically rigorous finance professional with hands-on experience building M&amp;A models, running DCF valuations, and producing equity research. Computer Science graduate with a quantitative edge — trained through a PwC India–associated Investment Banking programme.</p>
+    <div class="hero-pills">
+      <span class="pill">M&amp;A Modelling</span>
+      <span class="pill">DCF Valuation</span>
+      <span class="pill">Equity Research</span>
+      <span class="pill">Corporate Finance</span>
+      <span class="pill">PwC Trained</span>
+    </div>
+    <div class="btns">
+      <a href="#projects" class="btn btn-dark">View Projects →</a>
+      <a href="mailto:nikhilwaghmode55@gmail.com" class="btn btn-ghost">Hire Me</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="scard">
+      <div class="scard-num">4<sup>+</sup></div>
+      <div class="scard-label">Finance Projects</div>
+      <div class="scard-sub">M&amp;A · DCF · IPO · Equity</div>
+    </div>
+    <div class="scard">
+      <div class="scard-num">PwC</div>
+      <div class="scard-label">IB Certification</div>
+      <div class="scard-sub">Investment Banking</div>
+    </div>
+    <div class="scard">
+      <div class="scard-num">92<sup>%</sup></div>
+      <div class="scard-label">Published Research</div>
+      <div class="scard-sub">IJSET 2025 · ML Model</div>
+    </div>
+    <div class="scard">
+      <div class="scard-num">IIM</div>
+      <div class="scard-label">Finance Upskilling</div>
+      <div class="scard-sub">Bangalore · edX · Ongoing</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="about">
+  <p class="sec-label reveal">About</p>
+  <h2 class="sec-title reveal">Engineer who thinks<br/>like a <em style="font-style:italic;color:var(--gold-lt)">dealmaker.</em></h2>
+  <div class="about-grid">
+    <div class="about-body reveal">
+      <p>I'm a Computer Science graduate from Savitribai Phule Pune University who made a deliberate pivot into finance. While most peers were building apps, I was building <strong>buy-side M&amp;A models</strong>, dissecting financial statements of Indian PSU and defence companies, and learning the language of deals through a <strong>PwC India–associated Investment Banking programme</strong>.</p>
+      <p>My engineering background is an asset, not a detour. I'm comfortable with data, Python-based analysis, and structured problem-solving in ways that complement the analytical demands of investment banking, equity research, and corporate finance roles. My latest project — a <strong>live IPO Intelligence Dashboard</strong> — combines both worlds: a Python data pipeline feeding a decision engine built on valuation signals that work even for loss-making companies.</p>
+      <p>I'm an <strong>immediate joiner</strong>, open to relocation, and actively looking for opportunities where I can contribute to deal execution, financial analysis, or research — and grow fast alongside a team that takes finance seriously.</p>
+    </div>
+    <div class="sidebar reveal">
+      <div class="sbox">
+        <h4>Location</h4>
+        <p>Malshiras, Maharashtra<br/>Open to relocation · Prefers Mumbai</p>
+      </div>
+      <div class="sbox">
+        <h4>Availability</h4>
+        <p class="big">Now</p>
+        <p>Immediate joiner · Internship or full-time</p>
+      </div>
+      <div class="sbox">
+        <h4>Target Roles</h4>
+        <p>Investment Banking Analyst · Equity Research · Financial Analyst · Corporate Finance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <p class="sec-label reveal">Work</p>
+  <h2 class="sec-title reveal">Projects & Research</h2>
+  <div class="projects-grid">
+
+    <div class="pcard reveal">
+      <span class="pbadge wip">In Progress</span>
+      <span class="pnum">01</span>
+      <span class="pcat">M&amp;A · Investment Banking</span>
+      <h3 class="ptitle">BDL × SkyShield — Buy-Side M&amp;A Model</h3>
+      <p class="pdesc">Buy-side acquisition model for Bharat Dynamics Limited acquiring a hypothetical UK-based drone manufacturer. Integrated 3-statement projections, DCF, comparable company analysis, WACC, Purchase Price Allocation, merger balance sheet, and synergy impact modelling.</p>
+      <div class="ptags">
+        <span class="ptag">3-Statement</span><span class="ptag">DCF</span><span class="ptag">Comps</span><span class="ptag">PPA</span><span class="ptag">WACC</span><span class="ptag">Synergies</span><span class="ptag">Excel</span>
+      </div>
+      <span class="plink-muted">Finalising balance sheet — link coming soon</span>
+    </div>
+
+    <div class="pcard reveal">
+      <span class="pbadge done">Completed</span>
+      <span class="pnum">02</span>
+      <span class="pcat">Equity Research</span>
+      <h3 class="ptitle">Alkem Laboratories — DCF &amp; Equity Research</h3>
+      <p class="pdesc">Fundamental research and DCF valuation of Alkem Laboratories. Financial statement analysis, business model breakdown, key value drivers identification, and valuation summary assessing long-term investment attractiveness of the Indian pharma sector.</p>
+      <div class="ptags">
+        <span class="ptag">DCF</span><span class="ptag">Fundamental Analysis</span><span class="ptag">Pharma Sector</span><span class="ptag">Valuation</span>
+      </div>
+      <span class="plink-muted">Upload to Google Drive to link here</span>
+    </div>
+
+    <div class="pcard reveal">
+      <span class="pbadge done">Live</span>
+      <span class="pnum">03</span>
+      <span class="pcat">Finance + Data Engineering</span>
+      <h3 class="ptitle">Indian IPO Intelligence Dashboard</h3>
+      <p class="pdesc">Live pre-application decision engine for Indian mainboard IPOs. Python pipeline fetches real-time data via API, enriched with P/S ratio, promoter conviction, and capital allocation signals — designed to work for loss-making companies where P/E fails. Historical analysis of 24 IPOs across 2023–2025.</p>
+      <div class="ptags">
+        <span class="ptag">Python</span><span class="ptag">REST API</span><span class="ptag">Chart.js</span><span class="ptag">Decision Engine</span><span class="ptag">P/S Valuation</span><span class="ptag">GitHub Pages</span>
+      </div>
+      <a href="https://nikhilwaghmode55-dynamite.github.io/ipo-dashboard" target="_blank" class="plink">View Live Dashboard ↗</a>
+    </div>
+
+    <div class="pcard reveal">
+      <span class="pbadge done">Completed</span>
+      <span class="pnum">04</span>
+      <span class="pcat">Data Analysis · Python</span>
+      <h3 class="ptitle">Stock Price &amp; EMA Trend Analysis</h3>
+      <p class="pdesc">Analysed historical stock price data using EMA indicators and the Yahoo Finance API via Python. Led and coordinated 6 student teams as Internship Project Head. Applied quantitative methods to understand market trend patterns and price behaviour.</p>
+      <div class="ptags">
+        <span class="ptag">Python</span><span class="ptag">Yahoo Finance API</span><span class="ptag">EMA</span><span class="ptag">Team Lead</span>
+      </div>
+      <span class="plink-muted">Source code — link coming soon</span>
+    </div>
+
+    <div class="pcard reveal">
+      <span class="pbadge pub">Published</span>
+      <span class="pnum">05</span>
+      <span class="pcat">Research Paper · IJSET 2025</span>
+      <h3 class="ptitle">ML Instrument Recognition — Published Research</h3>
+      <p class="pdesc">Final-year engineering research achieving 92.4% model accuracy, published in the International Journal of Science, Engineering and Technology (2025). Demonstrates analytical depth, structured thinking, and publication-standard research ability.</p>
+      <div class="ptags">
+        <span class="ptag">Machine Learning</span><span class="ptag">Python</span><span class="ptag">CNN</span><span class="ptag">Published · IJSET</span>
+      </div>
+      <span class="plink-muted">Add your IJSET paper URL here</span>
+    </div>
+
+    <div class="pcard placeholder reveal">
+      <span class="pbadge plan">Planned</span>
+      <span class="pnum">06</span>
+      <span class="pcat">Private Equity</span>
+      <h3 class="ptitle">LBO Model</h3>
+      <p class="pdesc">Leveraged Buyout model for a target Indian company — IRR analysis, debt waterfall, exit multiple scenarios, and sensitivity tables. Part of ongoing IB skill development.</p>
+      <div class="ptags">
+        <span class="ptag">LBO</span><span class="ptag">Private Equity</span><span class="ptag">IRR Analysis</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <p class="sec-label reveal">Capabilities</p>
+  <h2 class="sec-title reveal">Skills & Tools</h2>
+  <div class="skills-grid">
+    <div class="skill-group reveal">
+      <h3>Finance & Valuation</h3>
+      <div class="skill-row"><span class="skill-name">Financial Modelling (3-Statement)</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
+      <div class="skill-row"><span class="skill-name">DCF Valuation</span><div class="bar"><div class="bar-fill" data-w="78"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Comparable Company Analysis</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></div>
+      <div class="skill-row"><span class="skill-name">M&amp;A Modelling &amp; Synergy Analysis</span><div class="bar"><div class="bar-fill" data-w="72"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Equity Research &amp; Reporting</span><div class="bar"><div class="bar-fill" data-w="70"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Corporate Finance &amp; WACC</span><div class="bar"><div class="bar-fill" data-w="68"></div></div></div>
+    </div>
+    <div class="skill-group reveal">
+      <h3>Tools & Technical</h3>
+      <div class="skill-row"><span class="skill-name">MS Excel (Advanced Modelling)</span><div class="bar"><div class="bar-fill" data-w="88"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Python (Data &amp; Financial Analysis)</span><div class="bar"><div class="bar-fill" data-w="72"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Financial Statement Reading</span><div class="bar"><div class="bar-fill" data-w="82"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Yahoo Finance / Market Data</span><div class="bar"><div class="bar-fill" data-w="60"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Research &amp; Written Analysis</span><div class="bar"><div class="bar-fill" data-w="85"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Data Visualisation &amp; Reporting</span><div class="bar"><div class="bar-fill" data-w="70"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <p class="sec-label reveal">Experience</p>
+  <h2 class="sec-title reveal">Work & Projects</h2>
+  <div class="exp-list">
+
+    <div class="exp-card reveal">
+      <div class="exp-meta">
+        <div class="exp-period">2025 – Present</div>
+        <div class="exp-org">Self-Initiated</div>
+        <div class="exp-type">Finance + Tech</div>
+      </div>
+      <div class="exp-content">
+        <h3>Indian IPO Intelligence Dashboard</h3>
+        <p>Built a live pre-application decision engine for Indian mainboard IPOs. Designed a Python scraper pipeline connected to a real-time API, an enrichment prompt system for RHP-sourced data, and a 4-signal valuation engine using P/S ratio, promoter conviction, capital allocation quality, and revenue growth — signals that remain valid for loss-making companies where P/E is undefined. Deployed on GitHub Pages.</p>
+        <div class="exp-tags">
+          <span class="ptag">Python</span><span class="ptag">REST API</span><span class="ptag">HTML/CSS/JS</span><span class="ptag">GitHub Pages</span><span class="ptag">IPO Valuation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card reveal">
+      <div class="exp-meta">
+        <div class="exp-period">2024 – 2025</div>
+        <div class="exp-org">Self-Initiated</div>
+        <div class="exp-type">Investment Banking</div>
+      </div>
+      <div class="exp-content">
+        <h3>BDL × SkyShield — Buy-Side M&amp;A Financial Model</h3>
+        <p>Built a comprehensive buy-side M&amp;A financial model modelling Bharat Dynamics Limited's acquisition of a hypothetical UK-based drone manufacturer. Integrated 3-statement projections, DCF and comparable company analyses, WACC computation, Purchase Price Allocation, and post-merger financial impact including synergies.</p>
+        <div class="exp-tags">
+          <span class="ptag">M&amp;A</span><span class="ptag">DCF</span><span class="ptag">Comps</span><span class="ptag">PPA</span><span class="ptag">3-Statement</span><span class="ptag">Excel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card reveal">
+      <div class="exp-meta">
+        <div class="exp-period">2024</div>
+        <div class="exp-org">Self-Driven Research</div>
+        <div class="exp-type">Equity Research</div>
+      </div>
+      <div class="exp-content">
+        <h3>Alkem Laboratories — DCF &amp; Equity Research</h3>
+        <p>Conducted independent fundamental analysis and DCF valuation of Alkem Laboratories. Studied annual reports, dissected financial statements, identified key business drivers in the Indian pharma sector, and produced valuation summaries to assess investment attractiveness.</p>
+        <div class="exp-tags">
+          <span class="ptag">Equity Research</span><span class="ptag">DCF</span><span class="ptag">Fundamental Analysis</span><span class="ptag">Annual Reports</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card reveal">
+      <div class="exp-meta">
+        <div class="exp-period">2023</div>
+        <div class="exp-org">Academic Internship · SPPU</div>
+        <div class="exp-type">Data Analysis</div>
+      </div>
+      <div class="exp-content">
+        <h3>Financial Data Analysis — Stock Price &amp; EMA Study</h3>
+        <p>Analysed historical stock price data using EMA indicators and the Yahoo Finance API via Python. Led and coordinated the work of 6 student teams as Internship Project Head. Applied quantitative methods to understand market trend patterns and price behaviour.</p>
+        <div class="exp-tags">
+          <span class="ptag">Python</span><span class="ptag">EMA</span><span class="ptag">Yahoo Finance API</span><span class="ptag">Team Lead</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="education">
+  <p class="sec-label reveal">Background</p>
+  <h2 class="sec-title reveal">Education & Certifications</h2>
+  <div class="edu-row">
+    <div class="edu-card reveal">
+      <div class="edu-year">2021 – 2025</div>
+      <div class="edu-deg">BE — Computer Science</div>
+      <div class="edu-inst">Savitribai Phule Pune University</div>
+      <div class="edu-score">CGPA: 7.55 / 10</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-year">2019 – 2021</div>
+      <div class="edu-deg">Class XII — Science (PCM)</div>
+      <div class="edu-inst">Maharashtra State Board</div>
+      <div class="edu-score">87.33%</div>
+    </div>
+  </div>
+  <div class="certs-row">
+    <div class="cert-card reveal">
+      <div class="cert-org">PW Skills × PwC India</div>
+      <div class="cert-name">Investment Banking Program</div>
+      <div class="cert-status">✓ Completed</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-org">IIM Bangalore × edX</div>
+      <div class="cert-name">Accounting &amp; Finance Upskilling</div>
+      <div class="cert-status">⏳ Ongoing</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-org">IJSET — International Journal</div>
+      <div class="cert-name">Published Research Author</div>
+      <div class="cert-status">✓ Published · 2025</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="sec-label">Get in Touch</p>
+  <h2 class="sec-title">Open to Opportunities</h2>
+  <p class="sub">Finance internships · Analyst roles · Equity research · Corporate finance · Immediate joiner</p>
+  <div class="clinks">
+    <a href="mailto:nikhilwaghmode55@gmail.com" class="clink">✉ nikhilwaghmode55@gmail.com</a>
+    <a href="tel:+919975086345" class="clink">📞 +91 99750 86345</a>
+    <a href="https://www.linkedin.com/in/nikhil-waghmode-1882942ba" target="_blank" class="clink">in LinkedIn</a>
+    <a href="https://github.com/nikhilwaghmode55-Dynamite" target="_blank" class="clink">⌥ GitHub</a>
+  </div>
+</section>
+
+<footer>© 2026 Nikhil Devidas Waghmode · Malshiras, Maharashtra · nikhilwaghmode55-dynamite.github.io/ipo-dashboard</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 75);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.width = e.target.dataset.w + '%';
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.bar-fill').forEach(b => barObs.observe(b));
+</script>
+</body>
+</html>
