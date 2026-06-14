@@ -85,6 +85,7 @@ section{padding:96px 52px;}
 .pcard.placeholder:hover{transform:none;box-shadow:none;}
 .pbadge{position:absolute;top:16px;right:16px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;font-weight:700;color:#fff;}
 .pbadge.done{background:var(--green);}
+.pbadge.live{background:#1c3f6e;}
 .pbadge.pub{background:#1c3f6e;}
 .pbadge.wip{background:var(--rust);}
 .pbadge.plan{background:var(--muted);}
@@ -94,9 +95,10 @@ section{padding:96px 52px;}
 .pdesc{font-size:13px;color:var(--muted);line-height:1.72;margin-bottom:20px;}
 .ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px;}
 .ptag{font-size:10px;font-family:'DM Mono',monospace;padding:3px 8px;background:var(--cream);border:1px solid var(--border);color:var(--ink);}
+.plinks{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
 .plink{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid var(--gold);padding-bottom:1px;transition:gap .2s;}
 .plink:hover{gap:10px;}
-.plink-muted{font-size:11px;letter-spacing:.08em;color:var(--muted);font-style:italic;}
+.plink-muted{font-size:11px;color:var(--muted);font-style:italic;}
 
 #skills{background:var(--cream);}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;}
@@ -124,12 +126,14 @@ section{padding:96px 52px;}
 .edu-deg{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:4px;}
 .edu-inst{font-size:13px;color:var(--muted);}
 .edu-score{font-size:12px;font-family:'DM Mono',monospace;color:var(--green);margin-top:6px;}
-.certs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;}
+.certs-row{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:2px;}
 .cert-card{background:var(--card);border:1px solid var(--border);padding:24px;position:relative;}
 .cert-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);}
 .cert-org{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
 .cert-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.4;}
 .cert-status{font-size:11px;color:var(--gold);margin-top:6px;font-family:'DM Mono',monospace;}
+.cert-link{font-size:11px;color:var(--gold);text-decoration:none;margin-top:8px;display:inline-block;border-bottom:1px solid var(--gold);}
+.cert-link:hover{opacity:.7;}
 
 #contact{background:var(--ink);color:var(--paper);text-align:center;padding:96px 52px;}
 #contact .sec-label{justify-content:center;}
@@ -187,12 +191,12 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);text-ali
     </div>
     <div class="btns">
       <a href="#projects" class="btn btn-dark">View Projects →</a>
-      <a href="mailto:nikhilwaghmode55@gmail.com" class="btn btn-ghost">Hire Me</a>
+      <a href="mailto:nikhilwaghmode55@gmail.com" class="btn btn-ghost">Contact Me</a>
     </div>
   </div>
   <div class="hero-stats">
     <div class="scard">
-      <div class="scard-num">4<sup>+</sup></div>
+      <div class="scard-num">5<sup>+</sup></div>
       <div class="scard-label">Finance Projects</div>
       <div class="scard-sub">M&amp;A · DCF · IPO · Equity</div>
     </div>
@@ -207,9 +211,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);text-ali
       <div class="scard-sub">IJSET 2025 · ML Model</div>
     </div>
     <div class="scard">
-      <div class="scard-num">IIM</div>
-      <div class="scard-label">Finance Upskilling</div>
-      <div class="scard-sub">Bangalore · edX · Ongoing</div>
+      <div class="scard-num">BE</div>
+      <div class="scard-label">Computer Science</div>
+      <div class="scard-sub">SPPU · 7.55 CGPA</div>
     </div>
   </div>
 </section>
@@ -257,23 +261,26 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);text-ali
       <div class="ptags">
         <span class="ptag">3-Statement</span><span class="ptag">DCF</span><span class="ptag">Comps</span><span class="ptag">PPA</span><span class="ptag">WACC</span><span class="ptag">Synergies</span><span class="ptag">Excel</span>
       </div>
-      <span class="plink-muted">Finalising balance sheet — link coming soon</span>
+      <span class="plink-muted">Finalising balance sheet reconciliation — link coming soon</span>
     </div>
 
     <div class="pcard reveal">
       <span class="pbadge done">Completed</span>
       <span class="pnum">02</span>
-      <span class="pcat">Equity Research</span>
+      <span class="pcat">Equity Research · DCF</span>
       <h3 class="ptitle">Alkem Laboratories — DCF &amp; Equity Research</h3>
       <p class="pdesc">Fundamental research and DCF valuation of Alkem Laboratories. Financial statement analysis, business model breakdown, key value drivers identification, and valuation summary assessing long-term investment attractiveness of the Indian pharma sector.</p>
       <div class="ptags">
-        <span class="ptag">DCF</span><span class="ptag">Fundamental Analysis</span><span class="ptag">Pharma Sector</span><span class="ptag">Valuation</span>
+        <span class="ptag">DCF</span><span class="ptag">Fundamental Analysis</span><span class="ptag">Pharma Sector</span><span class="ptag">Valuation</span><span class="ptag">Excel</span>
       </div>
-      <span class="plink-muted">Upload to Google Drive to link here</span>
+      <div class="plinks">
+        <a href="https://docs.google.com/spreadsheets/d/1Te84s6XAhB52kEiQyPt111jyjPervUJm/edit?usp=sharing" target="_blank" class="plink">DCF Model ↗</a>
+        <a href="https://drive.google.com/file/d/1CFoZc7zBh9ze5Hv_CIIBulJ3mKoaDyKL/view?usp=sharing" target="_blank" class="plink">Equity Research Report ↗</a>
+      </div>
     </div>
 
     <div class="pcard reveal">
-      <span class="pbadge done">Live</span>
+      <span class="pbadge live">Live</span>
       <span class="pnum">03</span>
       <span class="pcat">Finance + Data Engineering</span>
       <h3 class="ptitle">Indian IPO Intelligence Dashboard</h3>
@@ -281,31 +288,37 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);text-ali
       <div class="ptags">
         <span class="ptag">Python</span><span class="ptag">REST API</span><span class="ptag">Chart.js</span><span class="ptag">Decision Engine</span><span class="ptag">P/S Valuation</span><span class="ptag">GitHub Pages</span>
       </div>
-      <a href="https://nikhilwaghmode55-dynamite.github.io/ipo-dashboard" target="_blank" class="plink">View Live Dashboard ↗</a>
+      <div class="plinks">
+        <a href="https://nikhilwaghmode55-dynamite.github.io/ipo-dashboard" target="_blank" class="plink">View Live Dashboard ↗</a>
+      </div>
     </div>
 
     <div class="pcard reveal">
-      <span class="pbadge done">Completed</span>
+      <span class="pbadge live">Live</span>
       <span class="pnum">04</span>
       <span class="pcat">Data Analysis · Python</span>
       <h3 class="ptitle">Stock Price &amp; EMA Trend Analysis</h3>
-      <p class="pdesc">Analysed historical stock price data using EMA indicators and the Yahoo Finance API via Python. Led and coordinated 6 student teams as Internship Project Head. Applied quantitative methods to understand market trend patterns and price behaviour.</p>
+      <p class="pdesc">Live stock screener analysing historical price data using EMA indicators and the Yahoo Finance API via Python. Built as Internship Project Head leading 6 student teams. Deployed as an interactive Streamlit web application — enter any ticker and get EMA-based trend signals instantly.</p>
       <div class="ptags">
-        <span class="ptag">Python</span><span class="ptag">Yahoo Finance API</span><span class="ptag">EMA</span><span class="ptag">Team Lead</span>
+        <span class="ptag">Python</span><span class="ptag">Yahoo Finance API</span><span class="ptag">EMA</span><span class="ptag">Streamlit</span><span class="ptag">Team Lead</span>
       </div>
-      <span class="plink-muted">Source code — link coming soon</span>
+      <div class="plinks">
+        <a href="https://stock-screener-hbpgwjqwhp3mkduqgbyozj.streamlit.app" target="_blank" class="plink">View Live App ↗</a>
+      </div>
     </div>
 
     <div class="pcard reveal">
       <span class="pbadge pub">Published</span>
       <span class="pnum">05</span>
       <span class="pcat">Research Paper · IJSET 2025</span>
-      <h3 class="ptitle">ML Instrument Recognition — Published Research</h3>
-      <p class="pdesc">Final-year engineering research achieving 92.4% model accuracy, published in the International Journal of Science, Engineering and Technology (2025). Demonstrates analytical depth, structured thinking, and publication-standard research ability.</p>
+      <h3 class="ptitle">CNN-Based Musical Instrument Recognition</h3>
+      <p class="pdesc">Final-year engineering research achieving 92.4% model accuracy using Convolutional Neural Networks for audio-based instrument classification. Published in the International Journal of Science, Engineering and Technology (2025). Demonstrates rigorous analytical methodology and publication-standard research.</p>
       <div class="ptags">
-        <span class="ptag">Machine Learning</span><span class="ptag">Python</span><span class="ptag">CNN</span><span class="ptag">Published · IJSET</span>
+        <span class="ptag">CNN</span><span class="ptag">Machine Learning</span><span class="ptag">Python</span><span class="ptag">Audio Processing</span><span class="ptag">Published · IJSET</span>
       </div>
-      <span class="plink-muted">Add your IJSET paper URL here</span>
+      <div class="plinks">
+        <a href="https://drive.google.com/file/d/1kq6SVl6eNmN10fgN82dQgLP5KjG_-_oC/view?usp=sharing" target="_blank" class="plink">Read Paper ↗</a>
+      </div>
     </div>
 
     <div class="pcard placeholder reveal">
@@ -404,10 +417,25 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);text-ali
         <div class="exp-type">Data Analysis</div>
       </div>
       <div class="exp-content">
-        <h3>Financial Data Analysis — Stock Price &amp; EMA Study</h3>
-        <p>Analysed historical stock price data using EMA indicators and the Yahoo Finance API via Python. Led and coordinated the work of 6 student teams as Internship Project Head. Applied quantitative methods to understand market trend patterns and price behaviour.</p>
+        <h3>Stock Price &amp; EMA Trend Analysis</h3>
+        <p>Analysed historical stock price data using EMA indicators and the Yahoo Finance API via Python. Led and coordinated the work of 6 student teams as Internship Project Head. Deployed as a live Streamlit web application. Applied quantitative methods to understand market trend patterns and price behaviour.</p>
         <div class="exp-tags">
-          <span class="ptag">Python</span><span class="ptag">EMA</span><span class="ptag">Yahoo Finance API</span><span class="ptag">Team Lead</span>
+          <span class="ptag">Python</span><span class="ptag">EMA</span><span class="ptag">Yahoo Finance API</span><span class="ptag">Streamlit</span><span class="ptag">Team Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card reveal">
+      <div class="exp-meta">
+        <div class="exp-period">2024 – 2025</div>
+        <div class="exp-org">BE Final Year · SPPU</div>
+        <div class="exp-type">Research · Published</div>
+      </div>
+      <div class="exp-content">
+        <h3>CNN-Based Musical Instrument Recognition — Published Research</h3>
+        <p>Designed and trained a Convolutional Neural Network for audio-based musical instrument classification. Achieved 92.4% model accuracy through feature extraction, data augmentation, and model optimisation. Published in the International Journal of Science, Engineering and Technology (IJSET) 2025.</p>
+        <div class="exp-tags">
+          <span class="ptag">CNN</span><span class="ptag">Machine Learning</span><span class="ptag">Python</span><span class="ptag">Audio Processing</span><span class="ptag">IJSET Published</span>
         </div>
       </div>
     </div>
@@ -437,16 +465,13 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);text-ali
       <div class="cert-org">PW Skills × PwC India</div>
       <div class="cert-name">Investment Banking Program</div>
       <div class="cert-status">✓ Completed</div>
-    </div>
-    <div class="cert-card reveal">
-      <div class="cert-org">IIM Bangalore × edX</div>
-      <div class="cert-name">Accounting &amp; Finance Upskilling</div>
-      <div class="cert-status">⏳ Ongoing</div>
+      <a href="https://drive.google.com/file/d/1DoJr78xEy00u3E9o2H8c3_zQCW57msTW/view?usp=sharing" target="_blank" class="cert-link">View Certificate ↗</a>
     </div>
     <div class="cert-card reveal">
       <div class="cert-org">IJSET — International Journal</div>
       <div class="cert-name">Published Research Author</div>
       <div class="cert-status">✓ Published · 2025</div>
+      <a href="https://drive.google.com/file/d/1kq6SVl6eNmN10fgN82dQgLP5KjG_-_oC/view?usp=sharing" target="_blank" class="cert-link">View Paper ↗</a>
     </div>
   </div>
 </section>
@@ -463,7 +488,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);text-ali
   </div>
 </section>
 
-<footer>© 2026 Nikhil Devidas Waghmode · Malshiras, Maharashtra · nikhilwaghmode55-dynamite.github.io/ipo-dashboard</footer>
+<footer>© 2026 Nikhil Devidas Waghmode · Malshiras, Maharashtra · nikhilwaghmode55-dynamite.github.io/portfolio</footer>
 
 <script>
 const obs = new IntersectionObserver(entries => {
